@@ -1,9 +1,9 @@
-![image](https://github.com/user-attachments/assets/124b257a-196c-498e-94cc-98262ac10c7f)### **Criando uma imagem Docker: Visual Studio Code Server**
+### **Criando uma imagem Docker: Visual Studio Code Server**
 
 A imagem Docker **Visual Studio Code Server** é uma solução pronta para uso que permite rodar o **Visual Studio Code** em um ambiente remoto, acessível via navegador ou pelo cliente VS Code local. Baseada no projeto **code-server**, essa imagem é ideal para desenvolvedores que desejam ter um ambiente de desenvolvimento completo e personalizável em qualquer lugar, sem a necessidade de instalação local do VS Code.
 
 Com suporte a extensões, terminal integrado e acesso a arquivos locais, o **Visual Studio Code Server** oferece uma experiência de desenvolvimento rica e familiar, diretamente no navegador.
-
+![image](https://github.com/user-attachments/assets/124b257a-196c-498e-94cc-98262ac10c7f)
 ---
 
 ### **Recursos Principais**
