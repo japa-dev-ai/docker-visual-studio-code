@@ -3,9 +3,12 @@
 A imagem Docker **Visual Studio Code Server** é uma solução pronta para uso que permite rodar o **Visual Studio Code** em um ambiente remoto, acessível via navegador ou pelo cliente VS Code local. Baseada no projeto **code-server**, essa imagem é ideal para desenvolvedores que desejam ter um ambiente de desenvolvimento completo e personalizável em qualquer lugar, sem a necessidade de instalação local do VS Code.
 
 Com suporte a extensões, terminal integrado e acesso a arquivos locais, o **Visual Studio Code Server** oferece uma experiência de desenvolvimento rica e familiar, diretamente no navegador.
-![image](https://github.com/user-attachments/assets/124b257a-196c-498e-94cc-98262ac10c7f)
+
 ---
 
+![image](https://github.com/user-attachments/assets/124b257a-196c-498e-94cc-98262ac10c7f)
+
+---
 ### **Recursos Principais**
 - **Ambiente de Desenvolvimento Remoto**: Acesse o Visual Studio Code de qualquer dispositivo com um navegador.
 - **Suporte a Extensões**: Instale e use extensões do VS Code diretamente no servidor.
@@ -18,21 +21,20 @@ Com suporte a extensões, terminal integrado e acesso a arquivos locais, o **Vis
 
 ### **Como Usar**
 
-#### **1. Executar o Contêiner**
+### **Clonar o repositório do GitHub**
+```bash
+# Abrir uma japela do cmd.
+git clone https://github.com/japa-dev-ai/docker-visual-studio-code.git
+```
+
+#### **2. Executar o Contêiner**
 Para rodar o contêiner com o Visual Studio Code Server, use o seguinte comando:
 
 ```bash
-docker run -d \
-  --name code-server \
-  -p 8080:8080 \
-  -v code-server-data:/home/coder \
-  -e PASSWORD=senha_segura \
-  minha-imagem-code-server
-```
+cd docker-visual-studio-code
 
-- **`-p 8080:8080`**: Expõe a porta do code-server (acessível em `http://localhost:8080`).
-- **`-v code-server-data:/home/coder`**: Persiste os dados do code-server em um volume Docker.
-- **`-e PASSWORD=senha_segura`**: Define uma senha para acessar o code-server (opcional).
+docker-compose up --build -d
+```
 
 #### **2. Acessar o code-server**
 Abra o navegador e acesse:
@@ -40,7 +42,7 @@ Abra o navegador e acesse:
 http://localhost:8080
 ```
 
-Insira a senha definida no comando `docker run` para acessar o ambiente de desenvolvimento.
+Insira a senha definida no comando `docker run` (1234 do exemplo) para acessar o ambiente de desenvolvimento.
 
 ---
 
@@ -50,7 +52,7 @@ Insira a senha definida no comando `docker run` para acessar o ambiente de desen
 Se você configurou o SSH Server na imagem, pode acessar o contêiner via SSH:
 
 ```bash
-ssh coder@localhost -p 2222
+ssh usr_vscode@localhost -p 2222
 ```
 
 #### **Persistência de Dados**
@@ -67,7 +69,7 @@ Os dados do code-server (extensões, configurações e arquivos) são armazenado
 O Dockerfile usado para construir a imagem está disponível no repositório. Ele inclui:
 - Instalação do **code-server**.
 - Configuração do **SSH Server** (opcional).
-- Definição de um usuário não-root (`coder`) para operações seguras.
+- Definição de um usuário não-root (`usr_vscode`) para operações seguras.
 
 ---
 
